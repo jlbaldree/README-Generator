@@ -80,7 +80,7 @@ createMarkdown +=
     
 ## Contributing
     
-*To make contributions to the app, please reach out to the below admin(s) for approval:
+*To make contributions to the app, please reach out to the following admin(s) for approval:*
 ${userResponses.contributing}`
 };
     
