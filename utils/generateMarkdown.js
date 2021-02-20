@@ -23,7 +23,9 @@ if (userResponses.tests !== '') { toc += `
 // Generate markdown for required sections
 let createMarkdown = 
 `# ${userResponses.title}
-    
+
+![badge](https://img.shields.io/badge/license-${userResponses.license}-brightgreen)<br>
+
 ## Description 
 
 ${userResponses.description}
@@ -42,7 +44,7 @@ createMarkdown +=
     
 ## Installation
     
-*Steps required to install project and how to get the development environment running:*
+*Here are the steps to install the necessary components to run the program*
     
 ${userResponses.instructions}`
 };
@@ -57,7 +59,7 @@ createMarkdown +=
     
 ## Usage 
     
-*Instructions and examples for use:*
+*Instructions on how to run and use the program*
     
 ${userResponses.usage}`
 };
@@ -73,53 +75,41 @@ createMarkdown +=
 
 // Contributing section
 if (userResponses.contributing !== '') {
-`
+createMarkdown +=
+    `
     
 ## Contributing
     
-*If you would like to contribute it, you can follow these guidelines for how to do so.*
-    
+*To make contributions to the app, please reach out to the below admin(s) for approval:
 ${userResponses.contributing}`
 };
     
-// Optional Tests section
-if (userResponses.tests !== '') {
-    
-createMarkdown +=
-`
-## Tests
-    
-*Tests for application and how to run them:*
-    
-${userResponses.tests}`
-};
-  
-  
+ 
 // License section is required
 
 let licenseURL = "";
-    
-if (userResponses.license == "Apache") { licenseURL == "assets/licenses/Apache.txt"};
 
-if (userResponses.license == "Boost") { licenseURL == "assets/licenses/Boost.txt"};
+if (userResponses.license == "Apache") {licenseURL = "assets/licenses/Apache.txt"};
 
-if (userResponses.license == "GNU AGPLv3") { licenseURL == "assets/licenses/GNU_AGPLv3.txt"};
+if (userResponses.license == "Boost") {licenseURL = "assets/licenses/Boost.txt"};
 
-if (userResponses.license == "GNU GPLv3") { licenseURL == "assets/licenses/GNU_GPLv3.txt"};
+if (userResponses.license == "GNU_AGPLv3") {licenseURL = "assets/licenses/GNU_AGPLv3.txt"};
 
-if (userResponses.license == "GNU LGPLv3") { licenseURL == "assets/licenses/GNU_LGPLv3.txt"};
+if (userResponses.license == "GNU_GPLv3") {licenseURL = "assets/licenses/GNU_GPLv3.txt"};
 
-if (userResponses.license == "MIT") { licenseURL == "assets/licenses/MIT.txt"};
+if (userResponses.license == "GNU_LGPLv3") {licenseURL = "assets/licenses/GNU_LGPLv3.txt"};
 
-if (userResponses.license == "Mozilla") { licenseURL == "assets/licenses/Mozilla.txt"};
+if (userResponses.license == "MIT") {licenseURL = "assets/licenses/MIT.txt"};
 
-if (userResponses.license == "Unlicense") { licenseURL == "assets/licenses/Unlicense.txt"};
+if (userResponses.license == "Mozilla") {licenseURL = "assets/licenses/Mozilla.txt"};
+
+if (userResponses.license == "Unlicense") {licenseURL = "assets/licenses/Unlicense.txt"};
 
 createMarkdown +=`
 
 ## License
     
-Licensed under the ${userResponses.license} License.
+Licensed under the ![${userResponses.license}](${licenseURL}) License.
 `;
   
   
@@ -130,19 +120,11 @@ let createcontact =
     
 ## Questions?
     
-For any questions, please contact me with the information below:
+If you have any questions, you can reach out to me through the below GitHub site or send an email to me at: ${userResponses.email}
    
 GitHub: https://github.com/${userResponses.username}
 `;
-  
-// If GitHub email is not null, add to Developer section
-if (userResponses.email !== null) {
-    
-createcontact +=
-`
-Email: ${userResponses.email}
-`};
-  
+   
 // Add developer section to markdown
 createMarkdown += createcontact;
   
