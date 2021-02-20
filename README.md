@@ -27,6 +27,7 @@ To run the application, intiate the user prompts by typing `node index.js` in th
 
 ![image](assets/UsageAid.gif)
 
+[Link to Video](https://drive.google.com/file/d/1tK0q7ASLa7Xu9xMRTxHPCORuMUvZjo-C/view)
     
 ## Contributing
     
