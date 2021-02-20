@@ -46,7 +46,7 @@ const prompts = [
 		type: "checkbox",
 		message:"What license is being used for the app?",
 		name: "license",
-		choices: ["Apache","Boost","GNU AGPLv3","GNU GPLv3","GNU LGPLv3","MIT","Mozilla","Unlicense"],
+		choices: ["Apache","Boost","GNU_AGPLv3","GNU_GPLv3","GNU_LGPLv3","MIT","Mozilla","Unlicense"],
 		validate: (value)=>{ if(value){return true} else {return "The license information is required"}}
 	},
 	{
